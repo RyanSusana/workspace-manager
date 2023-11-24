@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+selected_path=`fd .  | fzf --preview "preview_file_or_dir {}"`
+if [[ -z "$selected_path" ]]; then
+    exit 1
+fi
+
+if [[ -d "$selected_path" ]]; then
+	echo "$selected_path"
+elif [[ -f "$selected_path" ]]; then
+	echo "$(dirname $selected_path)"
+fi

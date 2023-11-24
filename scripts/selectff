@@ -1,0 +1,4 @@
+#!/bin/bash
+fd_path="$(get_workspace_dir)"
+selected_file=$(fd  . --base-directory $fd_path --min-depth 1 --relative-path --type file | fzf --preview "preview_file_or_dir $fd_path/{}")
+echo "$fd_path/$selected_file"

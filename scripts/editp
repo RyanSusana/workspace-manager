@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Define the editors' commands
+WEBSTORM_CMD="webstorm"
+INTELLIJ_CMD="idea"
+CODE_CMD="code"
+GOLAND_CMD="goland"
+
+# Function to determine which editor to use based on the project type
+project_path="$1"
+
+if [[ -f "$project_path/package.json" ]]; then
+		# JavaScript or TypeScript project
+		$WEBSTORM_CMD "$project_path"
+elif [[ -f "$project_path/pom.xml" ]]; then
+		# Maven project
+		$INTELLIJ_CMD "$project_path"
+elif [[ -f "$project_path/build.gradle" || -f "$project_path/build.gradle.kts" ]]; then
+		# Gradle project
+		$INTELLIJ_CMD "$project_path"
+elif [[ -f "$project_path/main.go" ]]; then
+		# Go project
+		$GOLAND_CMD "$project_path"
+else
+		# Default to Neovim for other project types
+		$CODE_CMD  "$project_path"
+fi

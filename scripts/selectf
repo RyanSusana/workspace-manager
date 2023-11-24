@@ -1,0 +1,2 @@
+#!/bin/bash
+ fd . --type f | fzf --preview "preview_file_or_dir {}"

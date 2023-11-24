@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+REPO=$1
+
+if [[ -z $REPO ]]; then
+    REPO=$(gum input --placeholder 'Git repository (HTTPS)')
+fi
+
+
+WORKSPACE_PATH="$(get_workspace_dir)"
+
+SELECTED_SPACE=$((fd --base-directory=$WORKSPACE_PATH --type=directory --exact-depth=1; echo 'New workspace...') | gum choose --header 'Select workspace...')
+
+if [[ $SELECTED_SPACE == 'New workspace...' ]]; then
+    SELECTED_SPACE=$(gum input --placeholder 'Enter name for new workspace...')
+fi
+
+
+REPO_NAME=$(basename $REPO)
+TARGET=$WORKSPACE_PATH/$SELECTED_SPACE/$REPO_NAME
+gum confirm "Are you sure you want to clone $REPO to $TARGET" 
+git clone $REPO $TARGET
+gum confirm "Do you want to open $REPO_NAME?"
+editp $TARGET
