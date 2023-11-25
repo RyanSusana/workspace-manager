@@ -1,8 +1,6 @@
 #!/bin/bash
-set -e
 fd_path="$(get_workspace_dir)"
 selected_project=$(fd  . --base-directory $fd_path --relative-path --max-depth 2 --min-depth 2 --type directory | fzf --preview "preview_file_or_dir $fd_path/{}")
-# Check if a project was selected
 if [ -n "$selected_project" ]; then
    echo "$fd_path/$selected_project"
 else

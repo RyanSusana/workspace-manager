@@ -3,7 +3,7 @@ fd_path="$(get_workspace_dir)"
 selected_path=$(fd  . --base-directory $fd_path --min-depth 1 --relative-path | fzf --preview "preview_file_or_dir $fd_path/{}")
 selected_path="$fd_path/$selected_path"
 if [[ -z "$selected_path" ]]; then
-    exit 1
+	exit 1
 fi
 if [[ -d "$selected_path" ]]; then
 	echo "$selected_path"

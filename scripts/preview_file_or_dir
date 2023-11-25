@@ -6,7 +6,7 @@ if [[ -f $path ]]; then
 	bat -f $path
 else
  if [[ -f "$path/README.md" ]]; then
-	 glow --style dark "$path/README.md" 2> /dev/null 
+	 bat -f "$path/README.md" 2> /dev/null 
  else
 		exa --git-ignore -T "$path"
  fi

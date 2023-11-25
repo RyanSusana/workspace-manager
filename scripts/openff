@@ -1,7 +1,0 @@
-#!/bin/bash
-selected_file=$(selectff)
-
-
-if [[ -n $selected_file ]]; then
-	vim "$selected_file"
-fi
