@@ -49,7 +49,7 @@ brew install gum fzf bat glow fd tmux
 Run this to install Workspace Manager
 ```sh
 git clone https://github.com/RyanSusana/workspace-manager $HOME/workspaces
-echo 'export WORKSPACE_MANAGER=$HOME/workspaces' >> $HOME/.zshrc
+echo 'export WORKSPACE_MANAGER=$HOME/workspace-manager' >> $HOME/.zshrc
 echo 'source $WORKSPACE_MANAGER/init.sh' >> $HOME/.zshrc
 source $HOME/.zshrc
 ```
