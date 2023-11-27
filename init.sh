@@ -9,5 +9,4 @@ alias opendd='dir=$(selectdd) && cd $dir'
 alias opend='dir=$(selectd)  && cd $dir'
 alias openf='file=$(selectf) && editf $file'
 alias openff='file=$(selectff) && editf $file'
-alias openp='project_path=$(selectp) && project=$(echo "$project_path" | awk -F/ "{print \$(NF-2)\"/\"\$(NF-1)}"); tmux attach -t "$project" || tmux new -s "$project" -c "$project_path"'
-
+alias openp='project_path=$(selectp) && sessionp $project_path'

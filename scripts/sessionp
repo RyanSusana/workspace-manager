@@ -1,0 +1,5 @@
+#!/bin/bash
+project_path=$1
+project=$(echo "$project_path" | awk -F/ '{print $(NF-2)"_"$(NF-1)}');
+echo "opening $project"
+tmux attach -t "$project" || tmux new -s "$project" -c "$project_path"

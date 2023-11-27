@@ -21,4 +21,4 @@ TARGET=$WORKSPACE_PATH/$SELECTED_SPACE/$REPO_NAME
 gum confirm "Are you sure you want to clone $REPO to $TARGET" 
 git clone $REPO $TARGET
 gum confirm "Do you want to open $REPO_NAME?"
-openp $TARGET
+sessionp $TARGET
