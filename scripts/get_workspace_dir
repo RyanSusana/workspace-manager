@@ -1,2 +1,3 @@
 #!/bin/bash
+mkdir -p "$WORKSPACE_MANAGER/workspaces"
 echo "$WORKSPACE_MANAGER/workspaces"
