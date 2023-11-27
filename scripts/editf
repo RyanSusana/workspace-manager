@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Function to edit a file using nvim or vim
+edit_file() {
+    local file="$1"
+    if command -v nvim > /dev/null; then
+        # If nvim is available, use it
+        nvim "$file"
+    else
+        # Fallback to vim if nvim is not available
+        vim "$file"
+    fi
+}
+
+# Check if a filename is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 [filename]"
+    exit 1
+fi
+
+# Call the function with the provided filename
+edit_file "$1"
+

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 export PATH=$PATH:"$WORKSPACE_MANAGER/scripts"
 export CDPATH=$CDPATH:$WORKSPACE_MANAGER:"$WORKSPACE_MANAGER/workspaces"
-alias editf='e(){nvim $1 || vim $1 || vi $1 || nano $1}; e'
 alias cdw="cd $WORKSPACE_MANAGER/workspaces"
 alias cdp='project=$(selectp) && cd $project'
 alias cdd='dir=$(selectdd) && cd $dir'

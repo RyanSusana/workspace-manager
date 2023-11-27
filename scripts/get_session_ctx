@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cur_project_path=$WORKSPACE_MANAGER_PROJECT
+if [[ -z "$cur_project_path" ]]; then
+	cur_project_path="$WORKSPACE_MANAGER/workspaces/"
+fi
+echo $cur_project_path

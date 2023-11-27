@@ -4,9 +4,9 @@ WORKSPACE_PATH="$(get_workspace_dir)"
 SELECTED_SPACE=$((fd --base-directory=$WORKSPACE_PATH --type=directory --exact-depth=1; echo 'New workspace...') | gum choose --header 'Select workspace...')
 
 if [[ $SELECTED_SPACE == 'New workspace...' ]]; then
-    SELECTED_SPACE=$(gum input --placeholder 'Enter name for new workspace...')
+    SELECTED_SPACE="$(gum input --placeholder 'Enter name for new workspace...')/"
     mkdir -p "$WORKSPACE_PATH/$SELECTED_SPACE"
 fi
-echo "$WORKSPACE_PATH/$SELECTED_SPACE/"
+echo "$WORKSPACE_PATH/$SELECTED_SPACE"
 
 
