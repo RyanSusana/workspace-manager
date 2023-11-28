@@ -1,6 +1,6 @@
 #!/bin/bash
 fd_path="$(get_session_ctx)"
-selected_file=$(fd  . --base-directory $fd_path --min-depth 1 --relative-path --type file | fzf --preview "preview_file_or_dir $fd_path/{}")
+selected_file=$(fd  . -H --base-directory $fd_path --min-depth 1 --relative-path --type file | fzf --preview "preview_file_or_dir $fd_path/{}")
 if [[ -n $selected_file ]]; then
 	echo "$fd_path$selected_file"
 else

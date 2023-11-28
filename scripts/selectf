@@ -1,5 +1,5 @@
 #!/bin/bash
-selected_file=$(fd . --type f | fzf --preview "preview_file_or_dir {}")
+selected_file=$(fd . -H --type f | fzf --preview "preview_file_or_dir {}")
 if [[ -n "$selected_file" ]]; then
 	echo "$selected_file"
 else
