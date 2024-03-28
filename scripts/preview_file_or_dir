@@ -8,7 +8,7 @@ else
  if [[ -f "$path/README.md" ]]; then
 	 bat -f "$path/README.md" 2> /dev/null 
  else
-		exa --git-ignore -T "$path"
+		eza --git-ignore -T "$path"
  fi
 fi
 
